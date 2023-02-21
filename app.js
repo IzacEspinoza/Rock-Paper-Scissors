@@ -2,6 +2,9 @@ console.log("Hello");//Saying hello
 
 //Array of possible answers
 const choices = ['Rock', 'Paper', 'Scissors'];
+//Scores
+let playerScore = 0;
+let computerScore = 0;
 
 //Players(users)choice
 const playerChoice = () => {
@@ -17,31 +20,37 @@ const computerChoice = () => {
 const playRound = (playerChoice, computerChoice) => {
     //Player picked Rock?
     if(playerChoice.toUpperCase() === 'rock'.toUpperCase() && computerChoice.toUpperCase() === 'paper'.toUpperCase()){
-        console.log(`Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`);
+        computerScore++;
+        return `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`;
     }else if(playerChoice.toUpperCase() == 'rock'.toUpperCase() && computerChoice.toUpperCase() === 'scissors'.toUpperCase()){
-        console.log(`Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`);
+        playerScore++;
+        return `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`;
     }else if(playerChoice.toUpperCase() == 'rock'.toUpperCase() && computerChoice.toUpperCase() === 'rock'.toUpperCase()){
-        console.log(`Player and Computer picked ${playerChoice}`);
+        return `Player and Computer picked ${playerChoice}`;
     }
     //Player picked Scissors?
     else if(playerChoice.toUpperCase() == 'scissors'.toUpperCase() && computerChoice.toUpperCase() === 'rock'.toUpperCase()){
-        console.log(`Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`);
+        computerScore++;
+        return`Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`;
     }
     else if(playerChoice.toUpperCase() == 'scissors'.toUpperCase() && computerChoice.toUpperCase() === 'paper'.toUpperCase()){
-        console.log(`Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`);
+        playerScore++;
+        return `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`;
     }
     else if(playerChoice.toUpperCase() == 'scissors'.toUpperCase() && computerChoice.toUpperCase() === 'scissors'.toUpperCase()){
-        console.log(`Player and Computer picked ${playerChoice}`);
+        return `Player and Computer picked ${playerChoice}`;
     }
     //Player picked Paper
-    else if(playerChoice.toUpperCase() === 'paper'.toUpperCase() && computerChoice.toUpperCase() === 'scissors'.toUpperCase()){
-        console.log(`Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`);
+    else if(playerChoice.toUpperCase() == 'paper'.toUpperCase() && computerChoice.toUpperCase() === 'scissors'.toUpperCase()){
+        computerScore++;
+        return `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`;
     }
     else if(playerChoice.toUpperCase() == 'paper'.toUpperCase() && computerChoice.toUpperCase() === 'rock'.toUpperCase()){
-        console.log(`Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`);
+        playerScore++;
+        return `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`;
     }
     else if(playerChoice.toUpperCase() == 'scissors'.toUpperCase() && computerChoice.toUpperCase() === 'scissors'.toUpperCase()){
-        console.log(`Player and Computer picked ${playerChoice}`);
+        return `Player and Computer picked ${playerChoice}`;
     }
 
 }
