@@ -34,5 +34,15 @@ const playRound = (playerChoice, computerChoice) => {
         console.log(`Player and Computer picked ${playerChoice}`);
     }
     //Player picked Paper
+    else if(playerChoice.toUpperCase() === 'paper'.toUpperCase() && computerChoice.toUpperCase() === 'scissors'.toUpperCase()){
+        console.log(`Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`);
+    }
+    else if(playerChoice.toUpperCase() == 'paper'.toUpperCase() && computerChoice.toUpperCase() === 'rock'.toUpperCase()){
+        console.log(`Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`);
+    }
+    else if(playerChoice.toUpperCase() == 'scissors'.toUpperCase() && computerChoice.toUpperCase() === 'scissors'.toUpperCase()){
+        console.log(`Player and Computer picked ${playerChoice}`);
+    }
+
 }
 //5 Round game, winner decided at end
