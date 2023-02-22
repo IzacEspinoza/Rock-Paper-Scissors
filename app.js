@@ -106,10 +106,33 @@ const game = () => {
     playRound(playerChoice(), computerChoice());
   }
   if (playerScore > computerScore) {
-    return `Player has won! Player score: ${playerScore}, Computer score: ${computerScore}`;
+    console.log(
+      `Player has won! Player score: ${playerScore}, Computer score: ${computerScore}`
+    );
   } else if (computerScore > playerScore) {
-    return `Computer has won!  Player score: ${playerScore}, Computer score: ${computerScore}`;
+    console.log(
+      `Computer has won!  Player score: ${playerScore}, Computer score: ${computerScore}`
+    );
   } else {
-    return `Probably a tie?`;
+    console.log(`Probably a tie?`);
+  }
+  //play again?
+  rematch();
+};
+
+//rematch
+const rematch = () => {
+  //Play again?
+  const replay = prompt("Would you like to play again? Y / N");
+  if (replay.toUpperCase() == "y".toUpperCase()) {
+    playerScore = 0;
+    computerScore = 0;
+    game();
+  } else {
+    console.log(
+      `Final scores: Player: ${playerScore} - Computer: ${computerScore}`
+    );
+    playerScore = 0;
+    computerScore = 0;
   }
 };
