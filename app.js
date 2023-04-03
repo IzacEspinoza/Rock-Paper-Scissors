@@ -6,6 +6,14 @@ const choices = ["Rock", "Paper", "Scissors"];
 let playerScore = 0;
 let computerScore = 0;
 
+//buttons
+const buttons = document.querySelectorAll("button");
+
+//check if buttons work
+buttons.forEach((button) =>
+  button.addEventListener("click", () => console.log(button.id))
+);
+
 //Players(users)choice
 const playerChoice = () => {
   let answer = prompt("Pick Rock, paper, or scissors:");
@@ -101,24 +109,24 @@ const playRound = (playerChoice, computerChoice) => {
   }
 };
 //5 Round game, winner decided at end
-const game = () => {
-  for (let i = 0; i <= 5; i++) {
-    playRound(playerChoice(), computerChoice());
-  }
-  if (playerScore > computerScore) {
-    console.log(
-      `Player has won! Player score: ${playerScore}, Computer score: ${computerScore}`
-    );
-  } else if (computerScore > playerScore) {
-    console.log(
-      `Computer has won!  Player score: ${playerScore}, Computer score: ${computerScore}`
-    );
-  } else {
-    console.log(`Probably a tie?`);
-  }
-  //play again?
-  rematch();
-};
+// const game = () => {
+//   for (let i = 0; i <= 5; i++) {
+//     playRound(playerChoice(), computerChoice());
+//   }
+//   if (playerScore > computerScore) {
+//     console.log(
+//       `Player has won! Player score: ${playerScore}, Computer score: ${computerScore}`
+//     );
+//   } else if (computerScore > playerScore) {
+//     console.log(
+//       `Computer has won!  Player score: ${playerScore}, Computer score: ${computerScore}`
+//     );
+//   } else {
+//     console.log(`Probably a tie?`);
+//   }
+//   //play again?
+//   rematch();
+// };
 //rematch
 const rematch = () => {
   //Play again?
