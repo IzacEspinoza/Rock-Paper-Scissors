@@ -114,12 +114,11 @@ const game = () => {
       `Computer has won!  Player score: ${playerScore}, Computer score: ${computerScore}`
     );
   } else {
-    console.log(`Probably a tie?`);
+    console.log(`Player and Computer have tied!`);
   }
   //play again?
   rematch();
 };
-
 //rematch
 const rematch = () => {
   //Play again?
