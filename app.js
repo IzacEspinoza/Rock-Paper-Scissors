@@ -119,7 +119,6 @@ const game = () => {
   //play again?
   rematch();
 };
-
 //rematch
 const rematch = () => {
   //Play again?
