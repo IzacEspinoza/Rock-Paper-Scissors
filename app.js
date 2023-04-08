@@ -11,7 +11,7 @@ const buttons = document.querySelectorAll("button");
 
 //check if buttons work
 buttons.forEach((button) =>
-  button.addEventListener("click", () => console.log(button.id))
+  button.addEventListener("click", () => playRound(button.id, computerChoice))
 );
 
 //Players(users)choice
