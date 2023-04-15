@@ -1,35 +1,38 @@
 console.log("Hello"); //Saying hello
 
 //Array of possible answers
-const choices = ["Rock", "Paper", "Scissors"];
+const choices = ["rock", "paper", "scissors"];
+
 //Scores
 let playerScore = 0;
 let computerScore = 0;
 
 //buttons
 const buttons = document.querySelectorAll("button");
-
 //check if buttons work
 buttons.forEach((button) =>
   button.addEventListener("click", () => playRound(button.id, computerChoice))
 );
 
+
 //Players(users)choice
 const playerChoice = () => {
-  let answer = prompt("Pick Rock, paper, or scissors:");
+  let answer = prompt('enter');
   return answer;
 };
+
 //Computers choice
 const computerChoice = () => {
   let randomNumber = Math.floor(Math.random() * (0 + 3));
   return choices[randomNumber];
 };
+
 //Round of play
 const playRound = (playerChoice, computerChoice) => {
   //Player picked Rock?
   if (
-    playerChoice.toUpperCase() === "rock".toUpperCase() &&
-    computerChoice.toUpperCase() === "paper".toUpperCase()
+    playerChoice === "rock" &&
+    computerChoice === "paper"
   ) {
     computerScore++;
     console.log(
@@ -37,8 +40,8 @@ const playRound = (playerChoice, computerChoice) => {
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   } else if (
-    playerChoice.toUpperCase() == "rock".toUpperCase() &&
-    computerChoice.toUpperCase() === "scissors".toUpperCase()
+    playerChoice === "rock" &&
+    computerChoice === "scissors"
   ) {
     playerScore++;
     console.log(
@@ -46,16 +49,16 @@ const playRound = (playerChoice, computerChoice) => {
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   } else if (
-    playerChoice.toUpperCase() == "rock".toUpperCase() &&
-    computerChoice.toUpperCase() === "rock".toUpperCase()
+    playerChoice === "rock" &&
+    computerChoice === "rock"
   ) {
     console.log(`Player and Computer picked ${playerChoice}`);
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   }
   //Player picked Scissors?
   else if (
-    playerChoice.toUpperCase() == "scissors".toUpperCase() &&
-    computerChoice.toUpperCase() === "rock".toUpperCase()
+    playerChoice === "scissors" &&
+    computerChoice === "rock"
   ) {
     computerScore++;
     console.log(
@@ -63,8 +66,8 @@ const playRound = (playerChoice, computerChoice) => {
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   } else if (
-    playerChoice.toUpperCase() == "scissors".toUpperCase() &&
-    computerChoice.toUpperCase() === "paper".toUpperCase()
+    playerChoice === "scissors" &&
+    computerChoice === "paper"
   ) {
     playerScore++;
     console.log(
@@ -72,16 +75,16 @@ const playRound = (playerChoice, computerChoice) => {
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   } else if (
-    playerChoice.toUpperCase() == "scissors".toUpperCase() &&
-    computerChoice.toUpperCase() === "scissors".toUpperCase()
+    playerChoice === "scissors" &&
+    computerChoice === "scissors"
   ) {
     console.log(`Player and Computer picked ${playerChoice}`);
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   }
   //Player picked Paper
   else if (
-    playerChoice.toUpperCase() == "paper".toUpperCase() &&
-    computerChoice.toUpperCase() === "scissors".toUpperCase()
+    playerChoice === "paper" &&
+    computerChoice === "scissors"
   ) {
     computerScore++;
     console.log(
@@ -89,8 +92,8 @@ const playRound = (playerChoice, computerChoice) => {
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   } else if (
-    playerChoice.toUpperCase() == "paper".toUpperCase() &&
-    computerChoice.toUpperCase() === "rock".toUpperCase()
+    playerChoice === "paper" &&
+    computerChoice === "rock"
   ) {
     playerScore++;
     console.log(
@@ -98,8 +101,8 @@ const playRound = (playerChoice, computerChoice) => {
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   } else if (
-    playerChoice.toUpperCase() == "scissors".toUpperCase() &&
-    computerChoice.toUpperCase() === "scissors".toUpperCase()
+    playerChoice === "scissors" &&
+    computerChoice === "scissors"
   ) {
     console.log(`Player and Computer picked ${playerChoice}`);
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
@@ -108,6 +111,8 @@ const playRound = (playerChoice, computerChoice) => {
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   }
 };
+
+
 //5 Round game, winner decided at end
 // const game = () => {
 //   for (let i = 0; i <= 5; i++) {
