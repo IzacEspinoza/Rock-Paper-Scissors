@@ -1,109 +1,80 @@
-console.log("Hello"); //Saying hello
-
 //Array of possible answers
 const choices = ["rock", "paper", "scissors"];
 
-//Scores
+//Scores, updates on each round
 let playerScore = 0;
 let computerScore = 0;
 
-//buttons
-const buttons = document.querySelectorAll("button");
-//check if buttons work
-buttons.forEach((button) =>
-  button.addEventListener("click", () => playRound(button.id, computerChoice))
-);
+//Player choice, blank until user clicks a button
+let playerChoice;
 
-
-//Players(users)choice
-const playerChoice = () => {
-  let answer = prompt('enter');
-  return answer;
-};
-
-//Computers choice
+//Computers choice, random between rock, paper, scissors
 const computerChoice = () => {
   let randomNumber = Math.floor(Math.random() * (0 + 3));
   return choices[randomNumber];
 };
 
-//Round of play
+// Game buttons, user clicks these to choose what to draw for round
+const buttons = document.querySelectorAll("button");
+//check if buttons work
+buttons.forEach((button) =>
+  button.addEventListener("click", () => {
+    playerChoice = button.id;
+    console.log(playerChoice);
+    playRound(playerChoice, computerChoice());
+  })
+);
+
+//Round of play, compares users and computers answers, give point to who won round
 const playRound = (playerChoice, computerChoice) => {
   //Player picked Rock?
-  if (
-    playerChoice === "rock" &&
-    computerChoice === "paper"
-  ) {
+  if (playerChoice == "rock" && computerChoice == "paper") {
     computerScore++;
     console.log(
       `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-  } else if (
-    playerChoice === "rock" &&
-    computerChoice === "scissors"
-  ) {
+  } else if (playerChoice == "rock" && computerChoice == "scissors") {
     playerScore++;
     console.log(
       `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-  } else if (
-    playerChoice === "rock" &&
-    computerChoice === "rock"
-  ) {
+  } else if (playerChoice == "rock" && computerChoice == "rock") {
     console.log(`Player and Computer picked ${playerChoice}`);
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   }
   //Player picked Scissors?
-  else if (
-    playerChoice === "scissors" &&
-    computerChoice === "rock"
-  ) {
+  else if (playerChoice == "scissors" && computerChoice == "rock") {
     computerScore++;
     console.log(
       `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-  } else if (
-    playerChoice === "scissors" &&
-    computerChoice === "paper"
-  ) {
+  } else if (playerChoice == "scissors" && computerChoice == "paper") {
     playerScore++;
     console.log(
       `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-  } else if (
-    playerChoice === "scissors" &&
-    computerChoice === "scissors"
-  ) {
+  } else if (playerChoice == "scissors" && computerChoice == "scissors") {
     console.log(`Player and Computer picked ${playerChoice}`);
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   }
   //Player picked Paper
-  else if (
-    playerChoice === "paper" &&
-    computerChoice === "scissors"
-  ) {
+  else if (playerChoice == "paper" && computerChoice == "scissors") {
     computerScore++;
     console.log(
       `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-  } else if (
-    playerChoice === "paper" &&
-    computerChoice === "rock"
-  ) {
+  } else if (playerChoice == "paper" && computerChoice == "rock") {
     playerScore++;
     console.log(
       `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`
     );
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-  } else if (
-    playerChoice === "scissors" &&
-    computerChoice === "scissors"
-  ) {
+  } else if (playerChoice == "scissors" && computerChoice == "scissors") {
     console.log(`Player and Computer picked ${playerChoice}`);
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   } else {
@@ -111,7 +82,6 @@ const playRound = (playerChoice, computerChoice) => {
     console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
   }
 };
-
 
 //5 Round game, winner decided at end
 // const game = () => {
