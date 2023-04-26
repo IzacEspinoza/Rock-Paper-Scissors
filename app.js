@@ -14,6 +14,16 @@ const computerChoice = () => {
   return choices[randomNumber];
 };
 
+//Display div
+const display = document.querySelector('#display');
+//Display div, made on a window load
+window.onload = (e) => {
+  console.log('page is loaded');
+  // display.innerHTML = playerChoice;
+}
+
+
+
 // Game buttons, user clicks these to choose what to draw for round
 const buttons = document.querySelectorAll("button");
 //check if buttons work
@@ -22,6 +32,7 @@ buttons.forEach((button) =>
     playerChoice = button.id;
     console.log(playerChoice);
     playRound(playerChoice, computerChoice());
+    display.innerHTML = playerChoice;
   })
 );
 
