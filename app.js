@@ -14,14 +14,10 @@ const computerChoice = () => {
   return choices[randomNumber];
 };
 
-//Display div
+//Round result div
 const display = document.querySelector("#display");
-
-//Display div, made on a window load
-window.onload = (e) => {
-  console.log("page is loaded");
-  // display.innerHTML = playerChoice;
-};
+//Scoreline div
+const scoreline = document.querySelector("#scoreline");
 
 // Game buttons, user clicks these to choose what to draw for round
 const buttons = document.querySelectorAll("button");
@@ -39,87 +35,58 @@ const playRound = (playerChoice, computerChoice) => {
   //Player picked Rock?
   if (playerChoice == "rock" && computerChoice == "paper") {
     computerScore++;
-    /*
-    console.log(
-      `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`
-    );
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`;
-    //Display the running score here
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   } else if (playerChoice == "rock" && computerChoice == "scissors") {
     playerScore++;
-    /*
-    console.log(
-      `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`
-    );
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Player's ${playerChoice} beats computer's ${computerChoice}, +1 point to Player`;
-    //Dispaly running score here
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   } else if (playerChoice == "rock" && computerChoice == "rock") {
-    /*
-    console.log(`Player and Computer picked ${playerChoice}`);
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Player and Computer picked ${playerChoice}`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   }
   //Player picked Scissors?
   else if (playerChoice == "scissors" && computerChoice == "rock") {
     computerScore++;
-    /*
-    console.log(
-      `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`
-    );
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Computers ${computerChoice} beats players ${playerChoice}, +1 point to Computer`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   } else if (playerChoice == "scissors" && computerChoice == "paper") {
     playerScore++;
-    /*
-    console.log(
-      `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`
-    );
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   } else if (playerChoice == "scissors" && computerChoice == "scissors") {
-    /*
-    console.log(`Player and Computer picked ${playerChoice}`);
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Player and Computer picked ${playerChoice}`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   }
   //Player picked Paper
   else if (playerChoice == "paper" && computerChoice == "scissors") {
     computerScore++;
-    /*
-    console.log(
-      `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`
-    );
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Computer's ${computerChoice} beats players ${playerChoice}, +1 point to Computer`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   } else if (playerChoice == "paper" && computerChoice == "rock") {
     playerScore++;
-    /*
-    console.log(
-      `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`
-    );
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Player's ${playerChoice} beats computers ${computerChoice}, +1 point to Player`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   } else if (playerChoice == "scissors" && computerChoice == "scissors") {
-    /*
-    console.log(`Player and Computer picked ${playerChoice}`);
-    console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
-    */
+    //Display round results and current scoreline
     display.textContent = `Player and Computer picked ${playerChoice}`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   } else if (playerChoice == "paper" && computerChoice == "paper") {
+    //Display round results and current scoreline
     display.textContent = `Player and Computer picked ${playerChoice}`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   } else {
-    //console.log(`Player: ${playerScore} - Computer: ${computerScore}`);
+    //Display round results and current scoreline
     display.textContent = `Come again mofo?`;
+    scoreline.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   }
 };
 
