@@ -19,6 +19,15 @@ const display = document.querySelector("#display");
 //Scoreline div
 const scoreline = document.querySelector("#scoreline");
 
+/*
+//when window is loaded up, make the buttons and play a 5 round game
+window.onload = (event) => {
+  console.log("page is fully loaded");
+  //start the game
+  game();
+};
+*/
+
 // Game buttons, user clicks these to choose what to draw for round
 const buttons = document.querySelectorAll("button");
 //check if buttons work
@@ -91,24 +100,26 @@ const playRound = (playerChoice, computerChoice) => {
 };
 
 //5 Round game, winner decided at end
-// const game = () => {
-//   for (let i = 0; i <= 5; i++) {
-//     playRound(playerChoice(), computerChoice());
-//   }
-//   if (playerScore > computerScore) {
-//     console.log(
-//       `Player has won! Player score: ${playerScore}, Computer score: ${computerScore}`
-//     );
-//   } else if (computerScore > playerScore) {
-//     console.log(
-//       `Computer has won!  Player score: ${playerScore}, Computer score: ${computerScore}`
-//     );
-//   } else {
-//     console.log(`Probably a tie?`);
-//   }
-//   //play again?
-//   rematch();
-// };
+const game = () => {
+  for (let i = 0; i <= 5; i++) {
+    playRound(playerChoice, computerChoice());
+  }
+  if (playerScore > computerScore) {
+    console.log(
+      `Player has won! Player score: ${playerScore}, Computer score: ${computerScore}`
+    );
+  } else if (computerScore > playerScore) {
+    console.log(
+      `Computer has won!  Player score: ${playerScore}, Computer score: ${computerScore}`
+    );
+  } else {
+    console.log(`Probably a tie?`);
+  }
+  //play again?
+  //rematch();
+};
+
+/*
 //rematch
 const rematch = () => {
   //Play again?
@@ -125,3 +136,4 @@ const rematch = () => {
     computerScore = 0;
   }
 };
+*/
