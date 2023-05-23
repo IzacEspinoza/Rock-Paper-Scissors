@@ -163,7 +163,7 @@ const game = () => {
       //   buttons.disabled = true;
       //   //announce winner
       //   //display.textContent = `There has been a winner or some shit!!`;
-
+      
       playRound(playerChoice, computerChoice());
     })
   );
