@@ -154,28 +154,9 @@ const game = () => {
     button.addEventListener("click", () => {
       playerChoice = button.id;
       console.log(playerChoice);
-      //playRound(playerChoice, computerChoice());
-      //  //Test of #2
-      //  if(playerScore == 5 || computerScore == 5){
-      //   //announce winner
-      //   display.textContent = `There has been a winner or some shit!!`;
-      //   //disable buttons,
-      //   buttons.disabled = true;
-      //   //announce winner
-      //   //display.textContent = `There has been a winner or some shit!!`;
-      
       playRound(playerChoice, computerChoice());
     })
   );
-
-  // //Test of #2
-  // if(playerScore == 5 || computerScore == 5){
-  //   //disable buttons,
-  //   buttons.disabled = true;
-  //   //announce winner
-  //   display.textContent = `There has been a winner or some shit!!`;
-
-  // }
 };
 
 /*
